@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESISI BARBERSHOP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+:root{
+    --main-color:#9e9d9d;
+    --black:#fffefe;
+    --bg:#fdfdfd;
+    --border:.3rem solid rgba(8, 8, 8, 0.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+ }
+
+ html{
+     font-size: 62.5%;
+     overflow-x: hidden;
+     scroll-padding-top: 9rem;
+     scroll-behavior: smooth;
+ }
+
+ html::-webkit-scrollbar{
+     width: .8rem;
+ }
+
+ html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #4b4a4a;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--black);
+}
+
+section{
+    padding: 2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color: #525050;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    color: #ffffff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+.header{
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:.05mm 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 7rem;
+}
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.6rem;
+    color: #202020;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div{
+    color: #181717;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.header .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+.home{
+    width: 100%;
+    min-height: 115vh;
+    display: flex;
+    align-items: center;
+    background:url(https://i.postimg.cc/ncNtw94L/home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 60rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #414040;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #3d3c3c;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background: rgb(112, 112, 112);
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex:1 1 45rem;
+    padding: 4rem;
+}
+
+.about .row .content h3{
+    font-size: 4rem;
+    color: #fff;
+}
+
+.about .row .content p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.service .row{
+    display: flex;
+    align-items: center;
+    background: rgb(112, 112, 112);
+    flex-wrap: wrap;
+}
+
+.service .row .image{
+    flex:1 1 5rem;
+    padding: 10rem;
+}
+
+.service .row .image img{
+    width: 100%;
+    min-height: 200px;
+    
+}
+
+.service .row .content{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.service .row .content h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+}
+
+.service .row .content h4{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.service .row .content p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+.service .row .price{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.service .row .price h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.service .row .price h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 3.2rem;
+    text-align: center;
+}
+
+.service .row .price p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.service .row .other{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.service .row .other h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+}
+
+.service .row .other h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 2rem;
+}
+
+.service .row .other p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.service .row .widi{
+    flex:1 1 5rem;
+    padding: 3rem;
+}
+
+.service .row .widi h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.service .row .widi h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.service .row .other h5{
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+.service .row .widi p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.products .box-container .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+
+
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+
+.products .box-container .box .image img{
+    height: 25rem;
+}
+
+.products .box-container .box .content h3{
+    color: #707070;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content p{
+    font-size: 1.8rem;
+    color: #a5a5a5;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.products .box-container .box .content .harga{
+    font-size: 2.5rem;
+    font-style: italic;
+    color: #525050;
+}
+
+.gallery .row{
+    display: flex;
+    align-items: center;
+    background: rgb(112, 112, 112);
+    flex-wrap: wrap;
+}
+
+.gallery .row .image{
+    flex:1 1 5rem;
+    padding: 7rem;
+}
+
+.gallery .row .image img{
+    width: 100%;
+    min-height: 200px;
+    
+}
+
+.gallery .row .content{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.gallery .row .content h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+}
+
+.gallery .row .content h4{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.gallery .row .content p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+.gallery .row .price{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.gallery .row .price h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.gallery .row .price h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 3.2rem;
+    text-align: center;
+}
+
+.gallery .row .price p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.gallery .row .other{
+    flex:1 1 25rem;
+    padding: 2rem;
+}
+
+.gallery .row .other h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+}
+
+.gallery .row .other h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 2rem;
+}
+
+.gallery .row .other p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.gallery .row .widi{
+    flex:1 1 5rem;
+    padding: 3rem;
+}
+
+.gallery .row .widi h3{
+    font-size: 4rem;
+    color: #fff;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.gallery .row .widi h4{
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.gallery .row .other h5{
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+.gallery .row .widi p{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.artist .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.artist .box-container .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+
+.artist .box-container .box .image{
+    padding: 2.5rem 0;
+}
+
+.artist .box-container .box .image img{
+    height: 25rem;
+}
+
+.artist .box-container .box .content h3{
+    color: #505050;
+    font-size: 2.5rem;
+}
+
+.artist .box-container .box .content p{
+    font-size: 1.8rem;
+    color: #a5a5a5;
+    padding: 0 0;
+    line-height: 1.8;
+}
+
+.artist .box-container .box .content .harga{
+    font-size: 2.5rem;
+    font-style: italic;
+    color: #525050;
+}
+
+.address .row{
+    display: flex;
+    align-items: center;
+    background: rgb(112, 112, 112);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.address .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.address .row .content{
+    flex:1 1 45rem;
+    padding: 4rem;
+}
+
+.address .row .content h3{
+    font-size: 4rem;
+    color: #fff;
+}
+
+.address .row .content h4{
+    font-size: 1.8rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+@media(max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+}
+
+@media(max-width:768px){
+    
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%; right: -100%;
+        background: #f0f0f0;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active{
+        right: 0;
+    }
+
+    .header .navbar a{
+        color: #525050;
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    .home{
+        width: 95%;
+        min-height: 500px;
+        background-position: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+    .home .content p{
+        font-size: 1.5rem;
+    }
+
+
+     .service .row .image img{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+        width: 200%;
+        min-height: 100px;
+    }    
+
+    .gallery .row .image img{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 200px;
+    
+    } 
+
+}
+
+@media(max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
+
+    .home{
+        width: 95%;
+        min-height: 300px;
+        background-position: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .service .row .image img{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 100px;
+    }    
+
+    .gallery .row .image img{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 100px;
+    
+    }
+}
+    </style>
+
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo">
+        <img src="https://i.postimg.cc/0yPyM9Nt/barber.jpg" alt="" width="150px">
+    </a>
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#service">service</a>
+        <a href="#products">products</a>
+        <a href="#gallery">gallery</a>
+        <a href="#artist">hair artist</a>
+        <a href="#address">address</a>
+    </nav>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+</header>
+
+<section class="home" id="home">
+    
+</section>
+    
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us</h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/Jzfqh38k/tentang.jpg" alt="">
+        </div>
+        <div class="content">
+            <h3>Apa yang membuatmu harus kesini?</h3>
+            <p>PRESISI BARBERSHOP Berdiri Tahun 2022. PRESISI BARBERSHOP Merupakan Tempat Cukur Rambut Yang Mempunyai Konsep Ketepatan, Detail dan Sesuai Ekspektasi Customer. Maka Dari Itu Kami Sangat Peduli Dengan Kualitas Hhasil Potongan Rambut Para Customer Kami. Rambut Aadalah Kanvas Kami Untuk Membuat Sebuah Karya.</p>
+            <p>PRESISI BARBERSHOP Juga Memiliki Tempat Yang Nyaman serta Menyediakan Pomade, Hair Powder, dan Hair Tonic Untuk Mempercantik Tampilan Rambut para Customer.</p>
+            <a href="#artist" class="btn">Book Now!</a>
+        </div>
+    </div>
+    
+</section>
+
+<section class="service" id="service">
+
+    <h1 class="heading"> Our<span> Service</span></h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/85jrbZGb/cut.png" alt="">
+        </div>
+        <div class="content">
+            <h3>HAIRCUT</h3>
+            <h4>Cukur Biasa</h4>
+            <p>Free Keramas + Vitamin + Styling</p>
+            <h4>Cukur Luar Biasa</h4>
+            <p>Free Vitamin + Styling</p>
+            <h4>Pelajar Biasa</h4>
+            <p>Cukur + Vitamin + Styling</p>
+            <h4>Pelajar Luar Biasa</h4>
+            <p>Cukur + Keramas + Vitamin + Styling</p>
+        </div>
+        <div class="price">
+            <h3>PRICE</h3>
+            <h4>25K</h4>
+            <h4>30K</h4>
+            <h4>20K</h4>
+            <h4>25K</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/13N5fJBw/other.png" alt="">
+        </div>
+        <div class="other">
+            <h3>OTHER SERVICE</h3>
+            <h4>Perming</h4>
+            <h4>Dreadlooks/Gimbal</h4>
+            <h4>Hair Warp</h4>
+            <h5>Coloring</h5>
+            <p>Highlight, Full Color</p>
+        </div>
+        <div class="widi">
+            <h3>Widi</h3>
+            <h4>200K</h4>
+            <h4>700K</h4>
+            <h4>90K</h4>
+            <h4>50K - 250K</h4>
+        </div>
+        <div class="widi">
+            <h3>Yunus</h3>
+            <h4>-</h4>
+            <h4>-</h4>
+            <h4>-</h4>
+            <h4>50K - 250K</h4>
+        </div>
+    </div>
+</section>
+
+<section class="products" id="products">
+    <h1 class="heading"><span>More</span> products </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="https://i.postimg.cc/MGwJNVLV/based.png" alt=""> 
+            </div>
+            <div class="content">
+                <h3>POMADE</h3>
+                <p>Oil based,Water based</p>
+                <div class="harga">30K - 100K</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="https://i.postimg.cc/PqvSv0RP/powder.png" alt=""> 
+            </div>
+            <div class="content">
+                <h3>HAIR POWDER</h3>
+                <div class="harga">30K - 100K</div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="image">
+                <img src="https://i.postimg.cc/QM2tbWxj/tonic.png" alt=""> 
+            </div>
+            <div class="content">
+                <h3>HAIR TONIC</h3>
+                <div class="harga">20K - 40K</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading"> Our<span> Gallery</span></h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/VsG5T9d8/side.png" alt="">
+        </div>
+        <div class="content">
+            <h3>TAPER WITH SIDE PART</h3>
+            <p>Potongan rambut yang ditandai dengan rambut bagian samping yang pendek atau dipangkas undercut, kemudian bagian atasnya berukuran medium. 
+                Taper with Side Part adalah potongan smart casual klasik, cocok untuk pria sehari-hari. 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/L6xKd208/french.png" alt="">
+        </div>
+        <div class="content">
+            <h3>FRENCH CROP</h3>
+            <p> French Crop merupakan potongan rambut pria yang sangat pendek di bagian belakang dan kedua sisi, dengan potongan cepak yang di-trim di bagian atas. 
+                Bagian poni biasanya dipotong pendek di atas alis atau ditata ke samping saat mulai panjang. 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/L8JWrf1x/mullet.png" alt="">
+        </div>
+        <div class="content">
+            <h3>MULLET</h3>
+            <p>Sedikit mirip dengan wolf cut, potongan Mullet punya ciri khas poni yang jabrik tapi sedikit pendek di bagian depan. Bagian sampingnya tipis dengan bagian ekor yang memanjang di belakang.
+                Umumnya, gaya rambut mullet lebih cocok untuk yang punya wajah oval atau lonjong.  
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="https://i.postimg.cc/mrM5rsVM/bun.png" alt="">
+        </div>
+        <div class="content">
+            <h3>MAN BUN</h3>
+            <p>For your information man bun ini merupakan model penataan rambut dengan ciri khas menarik sebagian besar rambut ke belakang kepala, lalu membentuk simpul atau menggulungnya. 
+                Jadi keseluruhan penampilan bisa tetap terlihat keren dan segar setiap saat, Sob.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="artist" id="artist">
+    <h1 class="heading"><span>Hair</span> Artist</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="https://i.postimg.cc/k58J07wR/widi.png" alt=""> 
+            </div>
+            <div class="content">
+                <h3>WIDI</h3>
+                <a href="https://wa.me/6285222604472?text=Hallo!%20Apakah%20Saat%20Ini%20Saya%20Bisa%20Booking?" class="btn">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="https://i.postimg.cc/ydbL0z4n/yunus.png" alt=""> 
+            </div>
+            <div class="content">
+                <h3>YUNUS</h3>
+                <a href="https://wa.me/6285222604472?text=Hallo!%20Apakah%20Saat%20Ini%20Saya%20Bisa%20Booking?" class="btn">Contact Me</a>
+            </div>
+        </div>
+        
+
+    </div>
+    
+</section>
+
+<section class="address" id="address">
+    <h1 class="heading"> <span>Our</span> address</h1>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7038550973243!2d108.46662387382806!3d-6.8058337665628486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1f2b1814070d%3A0xb54679d497103bef!2sPRESISI%20BARBERSHOP!5e0!3m2!1sid!2sid!4v1692599099592!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="content">
+            <h3>Opening Hours</h3>
+            <h4>Monday, 11.00 - 21.00 WIB</h4>
+            <h4>Tuesday, 11.00 - 21.00 WIB</h4>
+            <h4>Wednesday, 11.00 - 21.00 WIB</h4>
+            <h4>Thrusday, 11.00 - 21.00 WIB</h4>
+            <h4>Friday, 11.00 - 21.00 WIB</h4>
+            <h4>Saturday, 11.00 - 21.00 WIB</h4>
+            <h4>Sunday, 11.00 - 21.00 WIB</h4>
+        </div>
+    </div>
+
+</section>
+
+<section class="footer">
+    <div class="share">
+        <a href="https://web.facebook.com/cikruh.koceak/" class="fab fa-tiktok"></a>
+        <a href="https://www.instagram.com/koceaaakkkk_/?hl=id" class="fab fa-instagram"></a>
+        <a href="https://twitter.com/012Rizkyrahmans" class="fab fa-twitter"></a>
+        <a href="https://wa.me/6289687631181?text=Halo! Selamat Datang di Kakael Kitchen. Silahkan pilih desain rambut kesukaan anda dan jangan lupa untuk memberi Review. Good Luck!" class="fab fa-whatsapp"></a>
+    </div>
+    <div class="links">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#service">service</a>
+        <a href="#products">products</a>
+        <a href="#gallery">gallery</a>
+        <a href="#artist">artist</a>
+        <a href="#address">address</a>
+    </div>
+    <div class="credit">created by <span>Rizky Rahman Sahputra</span> | 31212211 MI-2021-KIP-P4 | all right reserved</div>
+</section>
+
+
+
+<script>
+    let navbar = document.querySelector('.navbar');
+        
+    document.querySelector('#menu-btn').onclick = () =>{
+        navbar.classList.toggle('active');
+        
+    }
+        
+        
+    window.onscroll = () =>{
+        navbar.classList.remove('active');
+
+    }
+</script>
+</body>
+</html>
